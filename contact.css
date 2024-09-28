@@ -80,36 +80,41 @@ body {
     box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.8);
 }
 
-/* Media query for smartphones (max-width: 768px) */
+/* Mobile layout (navbar horizontal at the bottom) */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
-        justify-content: space-between;
     }
 
     /* Navbar changes for mobile view */
     .navbar {
         flex-direction: row;
-        height: 70px;
-        width: 100vw;
-        margin-left: 0;
-        margin-right: 0;
+        height: auto;
+        width: 100%;
+        position: fixed;
         bottom: 0;
-        border-radius: 0;
+        left: 0;
+        right: 0;
         justify-content: space-around;
+        background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent for mobile */
+        border-radius: 0;
+        padding: 10px 0;
     }
 
     .navbt {
-        height: 100%;
-        width: 20%;
+        width: auto;
+        height: 50px;
         margin: 0;
+        padding: 0;
+        font-size: 14px;
+        flex: 1;
+        text-align: center;
     }
 
     .content {
-        height: auto;
-        width: 100vw;
-        flex-direction: column;
-        justify-content: center;
+        width: 100%;
+        margin-bottom: 70px; /* Space for the fixed navbar */
+        padding: 20px;
     }
 
     .lnkbt {
