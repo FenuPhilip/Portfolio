@@ -84,37 +84,38 @@ body {
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     /* Navbar changes for mobile view */
     .navbar {
         flex-direction: row;
-        height: auto;
         width: 100%;
+        height: auto;
         position: fixed;
         bottom: 0;
         left: 0;
         right: 0;
-        justify-content: space-around;
-        background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent for mobile */
-        border-radius: 0;
-        padding: 10px 0;
+        justify-content: space-evenly;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.9); /* Slight transparency */
     }
 
     .navbt {
-        width: auto;
-        height: 50px;
-        margin: 0;
-        padding: 0;
-        font-size: 14px;
         flex: 1;
+        height: 50px;
+        font-size: 16px;
         text-align: center;
     }
 
     .content {
+        height: auto;
         width: 100%;
-        margin-bottom: 70px; /* Space for the fixed navbar */
-        padding: 20px;
+        margin-bottom: 70px; /* For fixed navbar */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .lnkbt {
