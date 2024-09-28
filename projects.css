@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background: linear-gradient(to right, rgb(33, 33, 33), rgb(0, 0, 0));
+    font-family: 'Orbitron', sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    width: 100vw;
+    align-items: center;
+    flex-direction: column; /* Adjust for mobile view */
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(0, 0, 0);
+    width: 150px;
+    height: 600px;
+    border-radius: 20px;
+    margin-left: 10px;
+    filter: drop-shadow(0px 0px 15px black);
+}
+
+/* Responsive Navbar for Mobile */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+        justify-content: center;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .navbt {
+        width: 25%;
+        margin: 10px 5px;
+    }
+
+    .content {
+        width: 100%;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .prjbt {
+        width: 90%;
+        margin: 10px 0;
+    }
+}
+
+.navbt {
+    width: 90%;
+    height: 15%;
+    margin: 10px 0;
+    border: 0;
+    border-radius: 20px;
+    background-color: rgb(61, 61, 61);
+    color: white;
+    font-size: 18px;
+    filter: drop-shadow(0px 0px 8px black);
+    transition: all 0.3s;
+}
+
+.navbt:hover {
+    background-color: #00FF00;
+    color: black;
+}
+
+.content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 80%;
+    width: 80%;
+    background: transparent;
+    border-radius: 20px;
+    filter: drop-shadow(10px 10px 20px rgb(0, 0, 0));
+}
+
+.prjbt {
+    height: 120px;
+    width: 220px;
+    background-color: rgb(61, 61, 61);
+    color: white;
+    border-radius: 15px;
+    font-size: 18px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.prjbt:hover {
+    background-color: #00FF00;
+    color: black;
+    transform: scale(1.05);
+}
+
+.prjbt span {
+    display: block;
+    margin-top: 10px;
+}
+
+.project-link {
+    text-decoration: none;
+}
