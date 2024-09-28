@@ -84,30 +84,29 @@ body {
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
-        height: 100%;
-        justify-content: space-between; /* Added to ensure spacing */
+        height: 100%; /* Maintain full height */
     }
 
     /* Navbar changes for mobile view */
     .navbar {
         flex-direction: row; /* Change to row for horizontal layout */
         width: 100%; /* Full width */
-        height: auto; /* Adjust height automatically */
+        height: 60px; /* Fixed height */
         position: fixed; /* Fix to bottom */
         bottom: 0; /* Position at bottom */
         left: 0; /* Align to left */
         right: 0; /* Align to right */
         justify-content: space-around; /* Evenly distribute buttons */
-        padding: 10px 0; /* Add some vertical padding */
         background-color: rgba(0, 0, 0, 0.9); /* Background color */
+        z-index: 100; /* Ensure it's above other content */
     }
 
     .navbt {
         flex: 1; /* Allow buttons to grow */
-        height: 50px; /* Set height */
-        font-size: 16px; /* Font size for mobile */
+        height: 100%; /* Fill height of the navbar */
+        font-size: 14px; /* Adjust font size for mobile */
         text-align: center; /* Center text */
-        margin: 0 5px; /* Small margin for spacing */
+        margin: 0; /* No margin needed */
     }
 
     .content {
