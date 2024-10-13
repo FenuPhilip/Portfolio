@@ -1,19 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-
+/* General reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body Styling */
 body {
     display: flex;
     height: 100vh;
     background: linear-gradient(to right, rgb(33, 33, 33), rgb(0, 0, 0));
     font-family: 'Orbitron', sans-serif;
     overflow: hidden;
+    flex-direction: column; /* Ensure proper mobile layout */
 }
 
+/* Main Container */
 .container {
     display: flex;
     justify-content: space-between;
@@ -21,51 +23,21 @@ body {
     height: 100%;
     width: 100vw;
     align-items: center;
-    flex-direction: column; /* Update to handle responsiveness */
 }
 
+/* Sidebar / Navbar Styling */
 .navbar {
     display: flex;
     flex-direction: column;
-    background-color: rgb(0, 0, 0);
+    background-color: #000;
     width: 150px;
     height: 600px;
     border-radius: 20px;
     margin-left: 10px;
     filter: drop-shadow(0px 0px 15px black);
-    transition: flex-direction 0.3s ease;
 }
 
-/* For mobile devices */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: row;
-        width: 100%;
-        height: auto;
-        justify-content: center;
-        margin-left: 0;
-        margin-bottom: 10px;
-    }
-
-    .navbt {
-        width: 25%;
-        margin: 10px 5px;
-    }
-
-    .content {
-        height: auto;
-        width: 100%;
-    }
-
-    .welcome {
-        font-size: 30px;
-    }
-
-    .welcome span {
-        font-size: 15px;
-    }
-}
-
+/* Sidebar buttons */
 .navbt {
     width: 90%;
     height: 15%;
@@ -82,8 +54,10 @@ body {
 .navbt:hover {
     background-color: #00FF00;
     color: black;
+    box-shadow: 0 0 10px #00FF00, 0 0 20px #00FF00;
 }
 
+/* Main Content Area */
 .content {
     display: flex;
     height: 500px;
@@ -92,12 +66,13 @@ body {
     justify-content: center;
     border-radius: 20px;
     filter: drop-shadow(10px 10px 20px rgb(72, 72, 72));
-    background-image: url('Picsart_24-07-06_00-44-25-781(2)101.png');
+    background-image: url('Picsart_24-07-06_00-44-25-781(2).png'); /* Change this to the actual path of your image */
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
 }
 
+/* Overlay for image readability */
 .content::before {
     content: '';
     position: absolute;
@@ -105,10 +80,11 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Add overlay for readability */
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
     border-radius: 20px;
 }
 
+/* Welcome Text */
 .welcome {
     position: relative;
     z-index: 1;
@@ -123,6 +99,7 @@ body {
     animation: fadeIn 2s ease-in-out;
 }
 
+/* Welcome subtitle */
 .welcome span {
     display: block;
     font-size: 20px;
@@ -131,6 +108,7 @@ body {
     font-weight: normal;
 }
 
+/* Animation for welcome text */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -139,5 +117,56 @@ body {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Media Query for smartphones */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    /* Navbar moves to bottom */
+    .navbar {
+        flex-direction: row;
+        width: 100vw;
+        height: auto;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        justify-content: space-around;
+        margin-left: 0;
+        filter: none;
+    }
+
+    /* Buttons resize for mobile */
+    .navbt {
+        width: auto;
+        flex-grow: 1;
+        margin: 5px;
+        height: 50px;
+        font-size: 16px;
+    }
+
+    /* Content resizes and centers */
+    .content {
+        width: 100vw;
+        height: 80%;
+        justify-content: center;
+        padding: 20px;
+        background-image: url('Picsart_24-07-06_00-44-25-781(2).png'); /* Change this to the actual path of your image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    }
+
+    /* Welcome text adjusts for mobile */
+    .welcome {
+        font-size: 36px;
+    }
+
+    .welcome span {
+        font-size: 16px;
     }
 }

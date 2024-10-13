@@ -49,11 +49,16 @@ body {
         width: 25%;
         margin: 10px 5px;
     }
+}
 
+/* Responsive Content for Mobile */
+@media (max-width: 768px) {
     .content {
         width: 100%;
         flex-direction: column;
         height: auto;
+        justify-content: flex-start;
+        align-items: center;
     }
 
     .prjbt {
